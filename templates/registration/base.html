@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- In <head> section of your HTML -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> {% block title %}
+    <title>Alarmous | Login</title>{% endblock %} {% load static %} {% load bootstrap4 %} {% bootstrap_css %} {% bootstrap_javascript jquery='full' %}
+    <link rel="stylesheet" href="{% static 'alarms/css/styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'alarms/images/ico.ico' type='image/x-icon' %}">
+    <style>
+        body {
+            background: url("{% static 'alarms/images/bg.jpg' %}") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="padding-top: 10vh;">
+        <div class="row">
+            <div class="card col-10 offset-1 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-sm-10 offset-sm-1">
+                <div class="card-body">{% block content %} {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- In <body> end or in the <head> with async/defer attributes -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

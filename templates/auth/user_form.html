@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title>Alarmous | {{ title }}</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="p-4">
+        <h1>{{ title }}</h1>
+        <form action="{% url 'user_form_submit' %}" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="row">
+                <div class="col-6">
+                    <input class="btn btn-success" type="submit" value="Submit">
+                </div>
+                <div class="col-6">
+                    <a href="{% url 'home' %}" class="btn btn-secondary float-right">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
